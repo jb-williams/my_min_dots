@@ -1,0 +1,3 @@
+#!/bin/bash
+~/scripts/firewall-down
+~/scripts/firewall

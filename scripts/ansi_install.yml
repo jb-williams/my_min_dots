@@ -1,0 +1,313 @@
+---
+# My Setup for Debin / Apt Installs
+#
+#
+
+  - name: Config one of My Desktop Hosts
+    hosts: hosts
+    become: true
+    tasks:
+
+    - name: Adding i386 Architecture
+      shell: sed -i 's/deb http:\/\/deb.debian.org\/debian\/ bullseye main/deb http:\/\/deb.debian.org\/debian\/ bullseye main contrib non-free/g' /etc/apt/sources.list
+
+    - name: Adding i386 Architecture
+      shell: dpkg --add-architecture i386
+
+    - name: Uninstall Apache Httpd
+      apt:
+        name: apache2
+        state: absent
+
+
+    - name: Install Ed
+      apt:
+        force_apt_get: yes
+        name: ed
+        state: present
+
+    - name: Install Curl
+      apt:
+        force_apt_get: yes
+        name: curl
+        state: present
+
+    - name: Install dtach
+      apt:
+        force_apt_get: yes
+        name: htop
+        state: present
+
+    - name: Install iptables-persistent
+      apt:
+        force_apt_get: yes
+        name: iptables-persistent
+        state: present
+
+    - name: Install NetTools
+      apt:
+        force_apt_get: yes
+        name: net-tools
+        state: present
+
+    - name: Install Nmap
+      apt:
+        force_apt_get: yes
+        name: nmap
+        state: present
+
+    - name: Install Nslookup
+      apt:
+        force_apt_get: yes
+        name: nslookup
+        state: present
+
+    - name: Install Python3
+      apt:
+        force_apt_get: yes
+        name: python3
+        state: present
+
+    - name: Install pip3
+      apt:
+        state: present
+
+    - name: Install Tmux
+      apt:
+        force_apt_get: yes
+        name: tmux 
+        state: present
+         
+    - name: Install Traceroute
+      apt:
+        force_apt_get: yes
+        name: traceroute 
+        state: present
+
+    - name: Install vim
+      apt:
+        force_apt_get: yes
+        name: vim 
+        state: present
+
+    - name: Install Vifm
+      apt:
+        force_apt_get: yes
+        name: vifm 
+        state: present
+
+    - name: Install Wget
+      apt:
+        force_apt_get: yes
+        name: wget 
+        state: present
+
+    - name: Install xclip
+      apt:
+        force_apt_get: yes
+        name: xclip 
+        state: present
+        
+    - name: Install fping
+      apt:
+        force_apt_get: yes
+        name: fping 
+        state: present
+
+    - name: Install hydra
+      apt:
+        force_apt_get: yes
+        name: hydra 
+        state: present
+
+    - name: Install john
+      apt:
+        force_apt_get: yes
+        name: john 
+        state: present
+
+    - name: Install apt-listbugs
+      apt:
+        force_apt_get: yes
+        name: apt-listbugs 
+        state: present
+
+    - name: Install auditd
+      apt:
+        force_apt_get: yes
+        name: auditd 
+        state: present
+
+    - name: Install debsums
+      apt:
+        force_apt_get: yes
+        name: debsums 
+        state: present
+
+    - name: Install debsecan
+      apt:
+        force_apt_get: yes
+        name: debsecan 
+        state: present
+
+    - name: Install chkrootkit
+      apt:
+        force_apt_get: yes
+        name: chkrootkit 
+        state: present
+
+    - name: Install clamav
+      apt:
+        force_apt_get: yes
+        name: clamav 
+        state: present
+
+    - name: Install fail2ban
+      apt:
+        force_apt_get: yes
+        name: fail2ban 
+        state: present
+
+    - name: Install logrotate
+      apt:
+        force_apt_get: yes
+        name: logrotate 
+        state: present
+
+    - name: Install lynis
+      apt:
+        force_apt_get: yes
+        name: lynis 
+        state: present
+
+    - name: Install needrestart
+      apt:
+        force_apt_get: yes
+        name: needrestart 
+        state: present
+
+    - name: Install pkg-config
+      apt:
+        force_apt_get: yes
+        name: pkg-config 
+        state: present
+
+    - name: Install Mesa Vulk Drivers
+      apt:
+        force_apt_get: yes
+        name: mesa-vulkan-drivers 
+        state: present
+
+    - name: Install libglx-mesa0:i386
+      apt:
+        force_apt_get: yes
+        name: libglx-mesa0:i386
+        state: present
+        
+    - name: mesa-vulkan-drivers:i386
+      apt:
+        force_apt_get: yes
+        name: mesa-vulkan-drivers:i386
+        state: present
+        
+    - name: libgl1-mesa-dri:i386
+      apt:
+        force_apt_get: yes
+        name: libgl1-mesa-dri:i386
+        state: present
+
+    - name: libpam-tmpdir
+      apt:
+        force_apt_get: yes
+        name: libpam-tmpdir
+        state: present
+
+    - name: libfreetype6-dev
+      apt:
+        force_apt_get: yes
+        name: libfreetype6-dev
+        state: present
+        
+    - name: libfontconfig1-dev
+      apt:
+        force_apt_get: yes
+        name: libfontconfig1-dev
+        state: present
+
+    - name: libxcb-xfixes0-dev
+      apt:
+        force_apt_get: yes
+        name: libxcb-xfixes0-dev
+        state: present
+
+    - name: libxkbcommon-dev
+      apt:
+        force_apt_get: yes
+        name: libxkbcommon-dev
+        state: present
+
+    - name: libx11-dev
+      apt:
+        force_apt_get: yes
+        name: libx11-dev
+        state: present
+
+    - name: libxft-dev
+      apt:
+        force_apt_get: yes
+        name: libxft-dev
+        state: present
+
+    - name: libxinerama-dev 
+      apt:
+        force_apt_get: yes
+        name: libxinerama-dev 
+        state: present
+
+    - name: steam
+      apt:
+        force_apt_get: yes
+        name: steam
+        state: present
+
+    - name: remmina
+      apt:
+        force_apt_get: yes
+        name: remmina
+        state: present
+
+    - name: Changing Port Mapping
+      shell: sed -i 's/#Port 22/Port 61337/g' /etc/ssh/sshd_config
+
+    - name: Changing LogLevel Verbose
+      shell: sed -i 's/#LogLevel INFO/LogLevel VERBOSE/g' /etc/ssh/sshd_config
+
+    - name: No root login ssh
+      shell: sed -i 's/#PermitRootLogin prohibit-passowrd/PermitRootLogin no/g' /etc/ssh/sshd_config
+
+    - name: Change Max Auth Tries SSH
+      shell: sed -i 's/#MaxAuthTries 6/MaxAuthTries 3/g' /etc/ssh/sshd_config
+
+    - name: Change Num of SSH Sessions
+      shell: sed -i 's/#MaxSessions 10/MaxSessions 2/g' /etc/ssh/sshd_config
+
+    - name: Not Allowing Agent Forwarding
+      shell: sed -i 's/#AllowAgentForwarding yes/AllowAgentForwarding no/g' /etc/ssh/sshd_config
+
+    - name: No TCP Forwarding
+      shell: sed -i 's/#AllowTcpForwarding yes/AllowTcpForwarding no/g' /etc/ssh/sshd_config
+
+    - name: No X11 Forwarding
+      shell: sed -i 's/X11Forwarding yes/X11Forwarding no/g' /etc/ssh/sshd_config
+
+    - name: Restart SSHD
+      shell: systemctl restart sshd
+
+# fail2ban setup
+    - name: Backkup Jail conf
+      shell: cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local
+
+# umask
+    - name: Hardening Umask
+      shell: sed -i 's/022/027/g' /etc/login.defs
+
