@@ -1,5 +1,8 @@
 # Exports
 # COLOURS! YAAAY!
+# source bash aliases
+source ~/.bash_aliases
+# export term
 export TERM=xterm-256color
 # Obviously.
 export EDITOR=/bin/vim
@@ -18,10 +21,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-if [ -f ~/.bash_aliases ]; then
-    . ~/.bash_aliases
-fi
-
+# Safety Nets catches bad deletions in /
+alias rm='rm -I --preserve root'
+# Confirmation
+alias mv='mv -i'
+alias cpi='cp -i'
+alias ln='ln -i'
+# restricting perms on /
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chrgp='chgrp --preserve-root
 # 'Safe' version of __git_ps1 to avoid errors on systems that don't have it
 gitPrompt() {
   command -v __git_ps1 > /dev/null && __git_ps1 " (%s)"
@@ -85,5 +94,3 @@ if [ -f ~/.localrc ]; then
   source ~/.localrc
 fi
 
-source ~/.bash_aliases
-source ~/.bashrc
