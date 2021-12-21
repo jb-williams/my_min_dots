@@ -120,6 +120,11 @@ sed -i 's/022/027/g' /etc/login.defs
 # Save IPTable Rule Persistance
 /etc/init.d/netfilter-persistent save
 
+# Movin CronJob Scripts
+cp ~/scripts/cleanup.sh /etc/cron.daily/
+cp ~/scripts/update.sh /etc/cron.weekly/
+#cp ~/scripts/backup.sh /etc/cron.weekly/
+
 # Full Upgrade and Apt Cleaning
 apt upgrade -y && apt full-upgrade && apt-get autoremove --purge -y && apt clean -y
 
