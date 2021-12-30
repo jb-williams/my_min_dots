@@ -21,16 +21,6 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Safety Nets catches bad deletions in /
-alias rm='rm -I --preserve root'
-# Confirmation
-alias mv='mv -i'
-alias cpi='cp -i'
-alias ln='ln -i'
-# restricting perms on /
-alias chown='chown --preserve-root'
-alias chmod='chmod --preserve-root'
-alias chrgp='chgrp --preserve-root
 # 'Safe' version of __git_ps1 to avoid errors on systems that don't have it
 gitPrompt() {
   command -v __git_ps1 > /dev/null && __git_ps1 " (%s)"
@@ -93,4 +83,3 @@ export PS1="${nameC}\u${atC}@${hostC}\h:${pathC}\w${gitC}\$(gitPrompt)${pointerC
 if [ -f ~/.localrc ]; then 
   source ~/.localrc
 fi
-
